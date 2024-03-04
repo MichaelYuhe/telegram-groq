@@ -2,15 +2,14 @@
   "name": "telegram-groq",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chat with Groq in Telegram",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/bot.js",
     "start": "node src/bot.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "MichaelYuhe",
+  "license": "MIT",
   "dependencies": {
     "grammy": "^1.21.1",
     "groq-sdk": "^0.3.1"
