@@ -21,7 +21,6 @@ async function getGroqResponse(query) {
       model: "mixtral-8x7b-32768",
     });
 
-    console.log(completion.choices[0].message.content);
     return completion.choices[0].message.content;
   } catch (error) {
     console.error(error);
@@ -30,7 +29,7 @@ async function getGroqResponse(query) {
 
 bot.on("message:text", async (ctx) => {
   const response = await getGroqResponse(ctx.message.text);
-  console.log(response);
+  
   ctx.reply(response);
 });
 
