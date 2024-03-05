@@ -29,7 +29,10 @@ async function getGroqResponse(query) {
 
 bot.on("message:text", async (ctx) => {
   const response = await getGroqResponse(ctx.message.text);
-  
+
+  console.log('Message from: ', ctx.from.username)
+  console.log('Message: ', ctx.message.text)
+
   ctx.reply(response);
 });
 
