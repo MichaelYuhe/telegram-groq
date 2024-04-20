@@ -22,7 +22,6 @@ async function getGroqResponse(query) {
       temperature: 0.5,
       max_tokens: 1024,
       top_p: 1,
-      stream: true,
       stop: null,
     });
 
