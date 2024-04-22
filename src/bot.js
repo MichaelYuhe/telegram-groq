@@ -25,10 +25,6 @@ async function getGroqResponse(query) {
       stop: null,
     });
 
-    for await (const chunk of completion) {
-      process.stdout.write(chunk.choices[0]?.delta?.content || "");
-    }
-
     return completion.choices[0].message.content;
   } catch (error) {
     console.error(error);
@@ -37,9 +33,6 @@ async function getGroqResponse(query) {
 
 bot.on("message:text", async (ctx) => {
   const response = await getGroqResponse(ctx.message.text);
-
-  console.log("Message from: ", ctx.from.username);
-  console.log("Message: ", ctx.message.text);
 
   ctx.reply(response);
 });
